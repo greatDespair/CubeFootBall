@@ -44,9 +44,12 @@ public class PlayerController : MonoBehaviour
 
     private void MouseRotate()          //Крутить башкой
     {
-        MyAngle = 0;
-        MyAngle = sensivity * ((mousePos.x - (Screen.width / 2)) / Screen.width);
+        if (Input.GetMouseButton(0))
+        {
+            MyAngle = 0;
+            MyAngle = sensivity * ((mousePos.x - (Screen.width / 2)) / Screen.width);
 
-        transform.RotateAround(transform.position, transform.up, MyAngle);
+            transform.RotateAround(transform.position, transform.up, MyAngle);
+        }
     }
 }
